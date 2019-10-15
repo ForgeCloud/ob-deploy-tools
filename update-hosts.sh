@@ -2,5 +2,35 @@
 
 if [ ! -z ${IP_ADDRESS} ] && [ ! -z ${DOMAIN} ] && [ ! ${DNS_OVERRIDE} == "false" ]; then
   echo "Warning: Overriding DNS for ${DOMAIN} to resolve to ${IP_ADDRESS}"
-  echo "${IP_ADDRESS}   node.analytics.${DOMAIN} analytics.${DOMAIN} auth.${DOMAIN} bank.${DOMAIN} directory.${DOMAIN} register.${DOMAIN} am.${DOMAIN} account.${DOMAIN} admin.${DOMAIN} as.aspsp.${DOMAIN} config.${DOMAIN} docs.${DOMAIN} jwkms.${DOMAIN} matls.as.aspsp.${DOMAIN} matls.rs.aspsp.${DOMAIN} matls.service.bank.${DOMAIN} matls.service.directory.${DOMAIN} monitoring.${DOMAIN} rcs.aspsp.${DOMAIN} rs-simulator.aspsp.${DOMAIN} rs.aspsp.${DOMAIN} scgw.${DOMAIN} service.bank.${DOMAIN} service.directory.${DOMAIN} service.metrics.${DOMAIN} service.register.${DOMAIN} shop.${DOMAIN} swagger.${DOMAIN} tpp-core.${DOMAIN} swagger.${DOMAIN}" >> /etc/hosts
+  cat >> /etc/hosts <<EOF
+${IP_ADDRESS}   node.analytics.${DOMAIN}
+${IP_ADDRESS}   analytics.${DOMAIN}
+${IP_ADDRESS}   auth.${DOMAIN}
+${IP_ADDRESS}   bank.${DOMAIN}
+${IP_ADDRESS}   directory.${DOMAIN}
+${IP_ADDRESS}   register.${DOMAIN}
+${IP_ADDRESS}   am.${DOMAIN}
+${IP_ADDRESS}   account.${DOMAIN}
+${IP_ADDRESS}   admin.${DOMAIN}
+${IP_ADDRESS}   as.aspsp.${DOMAIN}
+${IP_ADDRESS}   config.${DOMAIN}
+${IP_ADDRESS}   docs.${DOMAIN}
+${IP_ADDRESS}   jwkms.${DOMAIN}
+${IP_ADDRESS}   matls.as.aspsp.${DOMAIN}
+${IP_ADDRESS}   matls.rs.aspsp.${DOMAIN}
+${IP_ADDRESS}   matls.service.bank.${DOMAIN}
+${IP_ADDRESS}   matls.service.directory.${DOMAIN}
+${IP_ADDRESS}   monitoring.${DOMAIN}
+${IP_ADDRESS}   rcs.aspsp.${DOMAIN}
+${IP_ADDRESS}   rs-simulator.aspsp.${DOMAIN}
+${IP_ADDRESS}   rs.aspsp.${DOMAIN}
+${IP_ADDRESS}   scgw.${DOMAIN}
+${IP_ADDRESS}   service.bank.${DOMAIN}
+${IP_ADDRESS}   service.directory.${DOMAIN}
+${IP_ADDRESS}   service.metrics.${DOMAIN}
+${IP_ADDRESS}   service.register.${DOMAIN}
+${IP_ADDRESS}   shop.${DOMAIN}
+${IP_ADDRESS}   swagger.${DOMAIN}
+${IP_ADDRESS}   tpp-core.${DOMAIN}
+EOF
 fi
